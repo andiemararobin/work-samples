@@ -1,0 +1,106 @@
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.w{font-family:'Asap',sans-serif;padding:1.25rem;--ac:#475f6a;--acl:#e8eef0;--acm:#c4d3d8;--tx:#303e44;--bg:#ffffff;--ln:#d0dce0;--sf:#f5f7f8;background:#fff;max-width:640px}
+.tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.tag::after{content:'';flex:1;height:1px;background:var(--ln)}
+.title{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:.2rem}
+.sub{font-size:12px;color:#666;margin-bottom:1rem;font-style:italic}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ln);border-radius:6px;overflow:hidden;margin-bottom:1rem}
+.stat{padding:12px 14px;border-right:1px solid var(--ln);cursor:default;transition:background .2s}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--acl)}
+.sn{font-size:22px;font-weight:700;color:var(--ac);display:block;line-height:1}
+.sl{font-size:11px;color:#666;margin-top:3px;line-height:1.35}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--ln);margin-bottom:1rem}
+.tab{font-size:12px;font-weight:600;color:#666;padding:8px 14px 7px;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none;font-family:'Asap',sans-serif}
+.tab.active{color:var(--ac);border-bottom-color:var(--ac)}
+.tab:hover{color:var(--ac)}
+.panel{display:none}
+.panel.active{display:block}
+.slabel{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);margin-bottom:10px}
+.addie{display:flex;gap:0;margin-bottom:.75rem;border:1px solid var(--ln);border-radius:6px;overflow:hidden}
+.phase{flex:1;padding:10px 4px 8px;text-align:center;cursor:pointer;transition:background .2s;border-right:1px solid var(--ln)}
+.phase:last-child{border-right:none}
+.phase.active{background:var(--ac)}
+.phase:not(.active):hover{background:var(--acl)}
+.ph{font-size:11px;font-weight:600;color:#555;display:block;transition:color .2s}
+.pa{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#888;display:block;margin-top:2px;transition:color .2s}
+.phase.active .ph,.phase.active .pa{color:#fff}
+.sprint-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;background:var(--acl);color:var(--ac);border-radius:4px;margin-bottom:10px}
+.sprint-detail{background:var(--sf);border-radius:6px;padding:12px 14px;font-size:12px;color:#555;line-height:1.6;border-left:3px solid var(--ac);min-height:60px;transition:opacity .2s;margin-bottom:.75rem}
+.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.75rem}
+.aud-card{background:var(--sf);border-radius:6px;padding:10px 12px;border-left:3px solid var(--ac)}
+.aud-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);margin-bottom:4px}
+.aud-text{font-size:12px;color:#555;line-height:1.5}
+.sme-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.sme{font-size:11px;padding:4px 10px;background:var(--sf);border:1px solid var(--acm);border-radius:4px;color:var(--tx)}
+.skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.sk{font-size:11px;padding:4px 10px;border:1px solid var(--acm);border-radius:4px;color:var(--tx);cursor:default;transition:all .2s}
+.sk:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
+.vlink{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--ac);text-decoration:none;border-bottom:1px solid var(--acm);padding-bottom:1px;transition:gap .2s}
+.vlink:hover{gap:9px}
+</style>
+<div class="w">
+  <div class="tag">E-learning · Articulate 360 · Leadership development</div>
+  <div class="title">An Open-Door Approach to Leadership</div>
+  <div class="sub">TRIUMF Supervisory Development Program</div>
+  <div class="stats">
+    <div class="stat"><span class="sn" id="ctr">0+</span><div class="sl">Learners reached</div></div>
+    <div class="stat"><span class="sn">3</span><div class="sl">Senior SMEs engaged</div></div>
+    <div class="stat"><span class="sn">#1</span><div class="sl">Module in inaugural program</div></div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(this,'sprint')">Design sprint process</button>
+    <button class="tab" onclick="switchTab(this,'audience')">Audience &amp; SMEs</button>
+    <button class="tab" onclick="switchTab(this,'skills')">Skills</button>
+  </div>
+  <div class="panel active" id="panel-sprint">
+    <div class="sprint-badge">ADDIE as design sprint</div>
+    <div class="slabel">Select a phase</div>
+    <div class="addie">
+      <div class="phase active" onclick="setPhase(0)"><span class="ph">Analysis</span><span class="pa">Sprint 1</span></div>
+      <div class="phase" onclick="setPhase(1)"><span class="ph">Design</span><span class="pa">Sprint 2</span></div>
+      <div class="phase" onclick="setPhase(2)"><span class="ph">Development</span><span class="pa">Sprint 3</span></div>
+      <div class="phase" onclick="setPhase(3)"><span class="ph">Implementation</span><span class="pa">Sprint 4</span></div>
+      <div class="phase" onclick="setPhase(4)"><span class="ph">Evaluation</span><span class="pa">Sprint 5</span></div>
+    </div>
+    <div class="sprint-detail" id="sprint-detail">Expert interviews with the HR Director and Ombudsperson using "How Might We" framing to surface leadership communication gaps. Succession planning data and competency analysis informed learner needs across all audience tiers.</div>
+  </div>
+  <div class="panel" id="panel-audience">
+    <div class="slabel">Audience</div>
+    <div class="audience-grid">
+      <div class="aud-card"><div class="aud-label">Board</div><div class="aud-text">TRIUMF Board of Directors and senior governance stakeholders</div></div>
+      <div class="aud-card"><div class="aud-label">University partners</div><div class="aud-text">Leaders from 21 university partners across Canada</div></div>
+      <div class="aud-card"><div class="aud-label">Organizational leaders</div><div class="aud-text">Leaders at all levels across TRIUMF's cross-functional teams</div></div>
+      <div class="aud-card"><div class="aud-label">Prospective leaders</div><div class="aud-text">Identified through succession planning and competency analysis</div></div>
+    </div>
+    <div class="slabel">Subject matter experts</div>
+    <div class="sme-row">
+      <div class="sme">HR Director</div>
+      <div class="sme">Ombudsperson</div>
+      <div class="sme">Select C-suite leaders</div>
+    </div>
+  </div>
+  <div class="panel" id="panel-skills">
+    <div class="slabel">Skills demonstrated</div>
+    <div class="skills">
+      <div class="sk">Articulate 360</div>
+      <div class="sk">ADDIE / design sprint</div>
+      <div class="sk">SME collaboration</div>
+      <div class="sk">Needs analysis</div>
+      <div class="sk">Leadership development</div>
+      <div class="sk">Multi-tier audience design</div>
+      <div class="sk">Succession planning integration</div>
+    </div>
+  </div>
+  <a class="vlink" href="https://360.articulate.com/review/content/e9186243-0488-410d-b1b1-1864994d0ff8/review" target="_blank">View sample →</a>
+</div>
+<script>
+const phases=["Expert interviews with the HR Director and Ombudsperson using \"How Might We\" framing to surface leadership communication gaps. Succession planning data and competency analysis informed learner needs across all audience tiers.","Collaborative storyboard sessions with C-suite SMEs to map open-door behaviours to real scenarios. Sprint questions tested assumptions and flagged risks before any content was built.","Iterative Articulate 360 build with two SME review cycles. Prototype shared early for rapid feedback — structure and tone refined before full development began.","Deployed to 500+ learners via LMS across the board, 21 university partner institutions, organizational leaders, and prospective leaders identified through succession planning.","Post-completion data and learner reflection reviewed. Findings fed back into the broader Supervisory Development Program to improve subsequent modules."];
+function setPhase(i){document.querySelectorAll('.phase').forEach((p,j)=>p.classList.toggle('active',j===i));const d=document.getElementById('sprint-detail');d.style.opacity=0;setTimeout(()=>{d.textContent=phases[i];d.style.opacity=1},160)}
+function switchTab(btn,id){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('panel-'+id).classList.add('active')}
+function animCount(el,target,dur=1000){let s=0;const f=(t)=>{if(!s)s=t;const p=Math.min((t-s)/dur,1);el.textContent=Math.floor((1-(1-p)**3)*target)+'+';if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){animCount(document.getElementById('ctr'),500);obs.disconnect()}})},{threshold:.3});
+obs.observe(document.querySelector('.stats'));
+</script>
