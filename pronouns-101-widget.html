@@ -1,0 +1,89 @@
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.w{font-family:'Asap',sans-serif;padding:1.25rem;--ac:#475f6a;--acl:#e8eef0;--acm:#c4d3d8;--tx:#303e44;--bg:#ffffff;--ln:#d0dce0;--sf:#f5f7f8;background:#fff;max-width:640px}
+.tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.tag::after{content:'';flex:1;height:1px;background:var(--ln)}
+.title{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:.2rem}
+.sub{font-size:12px;color:#666;margin-bottom:1rem;font-style:italic}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ln);border-radius:6px;overflow:hidden;margin-bottom:1rem}
+.stat{padding:12px 14px;border-right:1px solid var(--ln);transition:background .2s}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--acl)}
+.sn{font-size:22px;font-weight:700;color:var(--ac);display:block;line-height:1}
+.sl{font-size:11px;color:#666;margin-top:3px;line-height:1.35}
+.intro{font-size:12.5px;line-height:1.65;color:#555;margin-bottom:1rem}
+.olabel{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);margin-bottom:8px}
+.oi{border-bottom:1px solid var(--ln);overflow:hidden}
+.oi:first-of-type{border-top:1px solid var(--ln)}
+.otrig{width:100%;background:none;border:none;padding:11px 0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:'Asap',sans-serif;font-size:13px;font-weight:600;color:var(--tx);text-align:left;gap:8px;transition:color .2s}
+.otrig:hover{color:var(--ac)}
+.oico{font-size:16px;color:var(--ac);font-weight:300;transition:transform .25s;flex-shrink:0;line-height:1}
+.oi.open .oico{transform:rotate(45deg)}
+.obody{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:12px;line-height:1.6;color:#555}
+.oi.open .obody{max-height:260px;padding-bottom:11px}
+.ctxlabel{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);margin:1rem 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.chip{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;background:var(--sf);color:var(--ac);border-left:3px solid var(--ac)}
+.skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.sk{font-size:11px;padding:4px 10px;border:1px solid var(--acm);border-radius:4px;color:var(--tx);transition:all .2s}
+.sk:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
+.vlink{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--ac);text-decoration:none;border-bottom:1px solid var(--acm);padding-bottom:1px;transition:gap .2s}
+.vlink:hover{gap:9px}
+</style>
+<div class="w">
+  <div class="tag">Facilitation · Articulate 360 · Inclusion &amp; belonging</div>
+  <div class="title">Respectful Workplace: Pronouns 101</div>
+  <div class="sub">From the Positive Space workshop series — developed at UBC, adapted for TRIUMF</div>
+  <div class="stats">
+    <div class="stat"><span class="sn">400+</span><div class="sl">Hours of workshops facilitated</div></div>
+    <div class="stat"><span class="sn">1 yr</span><div class="sl">Strategic campus-wide pilot</div></div>
+    <div class="stat"><span class="sn">3</span><div class="sl">Institutions across its lifecycle</div></div>
+  </div>
+  <div class="intro">Pronouns 101 belongs to the Positive Space workshop series I helped develop at UBC — in rigorous collaboration with subject-matter experts, a facilitator team, and UBC's Equity &amp; Inclusion Office — and facilitated across campus through a year-long pilot totalling more than 400 workshop hours. Following further training and collaboration at SFU, I adapted the series for TRIUMF's context.</div>
+
+  <div class="olabel">Key outcomes — tap to expand</div>
+  <div class="oi open">
+    <button class="otrig">Rigorous, multi-stakeholder development<span class="oico">+</span></button>
+    <div class="obody">Developed at UBC alongside subject-matter experts, a team of facilitators, and the Equity &amp; Inclusion Office, ensuring the content met the institution's equity standards before it reached a single participant.</div>
+  </div>
+  <div class="oi">
+    <button class="otrig">Year-long campus pilot at scale<span class="oico">+</span></button>
+    <div class="obody">Facilitated strategically across the UBC campus through a year-long pilot, totalling more than 400 hours of workshops with staff and faculty audiences.</div>
+  </div>
+  <div class="oi">
+    <button class="otrig">Cross-institutional lineage<span class="oico">+</span></button>
+    <div class="obody">Strengthened through further training and collaboration at SFU, then adapted for TRIUMF's environment — carrying proven, well-tested content across three institutions.</div>
+  </div>
+  <div class="oi">
+    <button class="otrig">Grounded in legislation &amp; professional standards<span class="oico">+</span></button>
+    <div class="obody">Aligned to the Canadian Human Rights Act and organizational ethical standards, meeting both legal and professional benchmarks for respectful-workplace education.</div>
+  </div>
+
+  <div class="ctxlabel">Institutions</div>
+  <div class="chips">
+    <div class="chip">UBC Equity &amp; Inclusion Office</div>
+    <div class="chip">Simon Fraser University</div>
+    <div class="chip">TRIUMF</div>
+  </div>
+  <div class="ctxlabel">Skills demonstrated</div>
+  <div class="skills">
+    <div class="sk">Workshop design</div>
+    <div class="sk">Facilitation</div>
+    <div class="sk">Articulate 360</div>
+    <div class="sk">EDI integration</div>
+    <div class="sk">Cross-institutional collaboration</div>
+    <div class="sk">Stakeholder collaboration</div>
+    <div class="sk">Curriculum adaptation</div>
+  </div>
+  <a class="vlink" href="https://360.articulate.com/review/content/977b538d-54f1-47ba-a307-ffe56875e28c/review" target="_blank">View sample →</a>
+</div>
+<script>
+document.querySelectorAll('.otrig').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.oi'),isOpen=item.classList.contains('open');
+    item.closest('.w').querySelectorAll('.oi').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+</script>
